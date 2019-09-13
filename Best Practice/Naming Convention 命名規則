@@ -2,48 +2,49 @@ https://trailhead.salesforce.com/ja/content/learn/modules/apex_patterns_sl/apex_
 https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_classes_naming_conventions.htm
 
 変数と関数名
-	1. camelCaseを使って変数と関数名を決める
-	2. 便利で理解しやすい名前を使う
-	3. ListとSetには、Pluralの名前を使う
-	4. Mapには[key]by[value]を使う
+    1. camelCaseを使って変数と関数名を決める
+    2. 便利で理解しやすい名前を使う
+    3. ListとSetには、Pluralの名前を使う
+    4. Mapには[key]by[value]を使う
 
-	例
-		Integer age;           					 // No Good
-		Integer customerAge;   					 // Good
-		List<id> accountId;                      // No Good
-		List<id> accountIds;   					 // Good
-		Set<Account> insertAccounts;   			 // Good
-		Map<Id, Account> accountById;			 // Good
-		Map<Id, Account> accountByOpportunityId; // Good
+    例
+        Integer age;                                // No Good
+        Integer customerAge;                        // Good
+        List<id> accountId;                      // No Good
+        List<id> accountIds;                        // Good
+        Set<Account> insertAccounts;                // Good
+        Map<Id, Account> accountById;             // Good
+        Map<Id, Account> accountByOpportunityId; // Good
 
-		public static void deleteObject(List<SObject> anyObjects) {
-			try {
-				delete anyObjects;
-				System.debug('Delete Complete');
-			} catch (Exception ex) {
-				System.debug(JSON.serializePretty(anyObjects));
-			}
-		}
+        public static void deleteObject(List<SObject> anyObjects) {
+            try {
+                delete anyObjects;
+                System.debug('Delete Complete');
+            } catch (Exception ex) {
+                System.debug(JSON.serializePretty(anyObjects));
+            }
+        }
 
 クラス名
-	1. PascalCaseを使ってクラス名を決める。
-	2. テストクラスの場合[クラス名]_Test。そのようにクラスの下にテストクラスが見える。
+    1. PascalCaseを使ってクラス名を決める。
+    2. テストクラスの場合[クラス名]_Test。そのようにクラスの下にテストクラスが見える。
 
-	例
-		private class GetEmailData {
-			//なんちゃら　なんちゃら
-		private class GetEmailData_Test {
-			//なんちゃら　なんちゃら
-		}
+    例
+        private class GetEmailData {
+            //なんちゃら　なんちゃら
+        }
+        private class GetEmailData_Test {
+            //なんちゃら　なんちゃら
+        }
 
 トリガー名
-	1. PascalCaseを使ってクラス名を決める。
-	2. テストクラスの場合[クラス名]_Test。そのようにクラスの下にテストクラスがある。
+    1. PascalCaseを使ってクラス名を決める。
+    2. テストクラスの場合[クラス名]_Test。そのようにクラスの下にテストクラスがある。
 
-	例
-		trigger Account_AfterInsertBeforeDelete on Account (after insert, before delete) { {
-			//なんちゃら　なんちゃら			
-		}
-		private class Account_AfterInsertBeforeDelete_Test {
-			//なんちゃら　なんちゃら
-		}
+    例
+        trigger Account_AfterInsertBeforeDelete on Account (after insert, before delete) { {
+            //なんちゃら　なんちゃら            
+        }
+        private class Account_AfterInsertBeforeDelete_Test {
+            //なんちゃら　なんちゃら
+        }
