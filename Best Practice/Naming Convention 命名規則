@@ -8,6 +8,7 @@ https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_cl
     4. Mapには[key]by[value]を使う
 
     例
+    ```
         Integer age;                                // No Good
         Integer customerAge;                        // Good
         List<id> accountId;                      // No Good
@@ -24,27 +25,32 @@ https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_cl
                 System.debug(JSON.serializePretty(anyObjects));
             }
         }
+    ```
 
 クラス名
     1. PascalCaseを使ってクラス名を決める。
     2. テストクラスの場合[クラス名]_Test。そのようにクラスの下にテストクラスが見える。
 
     例
+    ```
         private class GetEmailData {
             //なんちゃら　なんちゃら
         }
         private class GetEmailData_Test {
             //なんちゃら　なんちゃら
         }
+    ```
 
 トリガー名
     1. PascalCaseを使ってクラス名を決める。
     2. テストクラスの場合[クラス名]_Test。そのようにクラスの下にテストクラスがある。
 
     例
+    ```
         trigger Account_AfterInsertBeforeDelete on Account (after insert, before delete) { {
             //なんちゃら　なんちゃら            
         }
         private class Account_AfterInsertBeforeDelete_Test {
             //なんちゃら　なんちゃら
         }
+    ```
